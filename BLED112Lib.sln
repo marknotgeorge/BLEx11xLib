@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLEx11xLib", "BLEx11xLib\BLEx11xLib.csproj", "{6BCE36DB-DB50-4143-B3F7-5D42AD5BD360}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLED112Lib", "BLEx11xLib\BLED112Lib.csproj", "{6BCE36DB-DB50-4143-B3F7-5D42AD5BD360}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLEProgramming", "BLEProgramming\BLEProgramming.csproj", "{FBD8D0B8-C787-471F-8B14-4237F24BDF62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6BCE36DB-DB50-4143-B3F7-5D42AD5BD360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BCE36DB-DB50-4143-B3F7-5D42AD5BD360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BCE36DB-DB50-4143-B3F7-5D42AD5BD360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBD8D0B8-C787-471F-8B14-4237F24BDF62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD8D0B8-C787-471F-8B14-4237F24BDF62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD8D0B8-C787-471F-8B14-4237F24BDF62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD8D0B8-C787-471F-8B14-4237F24BDF62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

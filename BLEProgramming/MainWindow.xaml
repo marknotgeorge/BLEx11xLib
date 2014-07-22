@@ -1,0 +1,53 @@
+﻿<Window
+    xmlns:Dashboarding="clr-namespace:Codeplex.Dashboarding;assembly=Codeplex.Dashboarding"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:BLEProgramming"
+    
+
+    x:Class="BLEProgramming.MainWindow"
+    Title="BLE Programming" Height="350" Width="525" ResizeMode="NoResize" DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="251*" />
+        </Grid.RowDefinitions>
+        <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="173*" />
+                <ColumnDefinition Width="64*" />
+                <ColumnDefinition Width="282*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="1">                
+                <Button x:Name="StartDeviceButton" Content="Start Device" IsEnabled="False" Click="StartDeviceButton_Click" />
+                <Button x:Name="OutputDataButton" Content="Start Outputting Data" IsEnabled="False"  Click="OutputDataButton_Click" />
+                <Button x:Name="CloseDeviceButton" Content="Close Device" IsEnabled="False" Click="CloseDeviceButton_Click" />
+            </StackPanel>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Dashboarding:RoundLed Width="Auto" IsTrue="{Binding Path=IsConnected}" Height="Auto" />
+                <TextBlock Grid.Column="1" Text="Connected" VerticalAlignment="Center" Margin="10,2,0,2" />
+                <Dashboarding:RoundLed Grid.Row="1" IsTrue="{Binding Path=IsEncrypted}" Width="Auto" Height="Auto" />
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="Encrypted" VerticalAlignment="Center" Margin="10,2,0,2" />
+                <Dashboarding:RoundLed Grid.Row="2" IsTrue="{Binding Path=IsAdvertising}" Width="Auto" Height="Auto" />
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="Advertising" VerticalAlignment="Center" Margin="10,2,0,2" />
+            </Grid>
+            <TextBlock Text="Port: " Grid.Row="0" Grid.Column="1" />
+            <ComboBox x:Name="PortCombo" Grid.Row="0" Grid.Column="2" SelectionChanged="PortCombo_SelectionChanged" Text="Select the COM port the BLED112 is connected to." Margin="1,0,0,0" />
+            <local:ConsoleOutputArea x:Name="OutputArea" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" />
+        </Grid>
+    </Grid>
+</Window>
