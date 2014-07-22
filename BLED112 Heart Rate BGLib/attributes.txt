@@ -1,0 +1,3 @@
+c_manufacturer_name 8
+c_model_number 11
+c_heart_rate_measurement 15

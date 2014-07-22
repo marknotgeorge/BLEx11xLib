@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <service uuid="1800">
+      <description>Generic Access Profile</description>
+
+      <characteristic uuid="2a00">
+        <properties read="true" const="true" />
+        <value>MnG BTLE HRM</value>
+      </characteristic>
+
+      <characteristic uuid="2a01">
+        <properties read="true" const="true" />
+        <value type="hex">8000</value>
+      </characteristic>
+    </service>
+	
+	<!-- 180A: org.bluetooth.service.device_information -->
+    <service uuid="180A" id="device_information">
+        <description>Device Information</description>
+    
+        <!-- 2A29: org.bluetooth.characteristic.manufacturer_name_string -->
+        <characteristic uuid="2A29" id="c_manufacturer_name">
+            <description>Manufacturer Name</description>
+            <properties read="true" const="true" />
+            <value>marknotgeorge</value>
+        </characteristic>
+
+        <!-- 2A24: org.bluetooth.characteristic.model_number_string -->
+        <characteristic uuid="2A24" id="c_model_number">
+            <description>Model Number</description>
+            <properties read="true" const="true" />
+            <value>MnG HRM-001</value>
+        </characteristic>
+	</service>
+		
+		<!-- 180A: org.bluetooth.service.heart_rate -->
+		<service uuid="180D" advertise="true">
+			<description>Heart Rate</description>
+
+			<!-- 2A24: org.bluetooth.characteristic.heart_rate_measurement -->
+			<characteristic uuid="2A37" id="c_heart_rate_measurement">
+				<properties notify="true" />
+				<value length="2" />
+			</characteristic>
+		</service>
+    
+        
+    
+</configuration>
